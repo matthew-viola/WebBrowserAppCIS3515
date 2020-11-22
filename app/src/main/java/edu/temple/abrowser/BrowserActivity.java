@@ -29,7 +29,7 @@ public class BrowserActivity extends AppCompatActivity implements PageControlFra
     ImageButton save;
     ArrayList<PageViewerFragment> pages;
     Bundle extras;
-    String strurl;
+
 
     Intent i;
     boolean listMode;

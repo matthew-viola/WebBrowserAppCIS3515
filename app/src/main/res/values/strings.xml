@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ABrowser</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="page_control_back"><![CDATA[<<]]></string>
+    <string name="page_control_forward"><![CDATA[>>]]></string>
+    <string name="page_control_go">Go</string>
+    <string name="url">url</string>
+</resources>

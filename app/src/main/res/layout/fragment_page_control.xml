@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".PageControlFragment">
+
+    <EditText
+        android:id="@+id/urlTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textUri"
+        app:layout_constraintBottom_toBottomOf="@+id/goButton"
+        app:layout_constraintEnd_toStartOf="@+id/goButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backButton"
+        android:hint="@string/url"
+        android:autofillHints="" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_media_rew"
+        android:contentDescription="@string/page_control_back"
+        app:layout_constraintBottom_toBottomOf="@+id/forwardButton"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toEndOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/forwardButton" />
+
+    <ImageButton
+        android:id="@+id/forwardButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_media_ff"
+        android:contentDescription="@string/page_control_forward"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/goButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@android:drawable/presence_online"
+        android:contentDescription="@string/page_control_go"
+        app:layout_constraintBottom_toBottomOf="@+id/backButton"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/backButton" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="55dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="110dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="165dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

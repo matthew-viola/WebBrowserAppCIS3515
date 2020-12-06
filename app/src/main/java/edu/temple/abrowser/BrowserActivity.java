@@ -7,7 +7,10 @@ import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -121,7 +124,7 @@ public class BrowserActivity extends AppCompatActivity implements PageControlFra
         if (extras != null){
             pages.add(PageViewerFragment.newInstance("https://google.com"));
         }
-
+        pages.add(PageViewerFragment.newInstance("https://temple.edu"));
     }
 
     @Override
@@ -247,4 +250,36 @@ public class BrowserActivity extends AppCompatActivity implements PageControlFra
     public void pageSelected(int position) {
         pagerFragment.showPage(position);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // R.menu.mymenu is a reference to an xml file named mymenu.xml which should be inside your res/menu directory.
+        // If you don't have res/menu, just create a directory named "menu" inside res
+        getMenuInflater().inflate(R.menu.mymenu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    // handle button activities
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.mybutton) {
+            String textMessage = "https://temple.edu";
+            Intent sendIntent = new Intent();
+          //  sendIntent.setAction(Intent.ACTION_SEND);
+
+          //  sendIntent.setData(Uri.parse(url));
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, textMessage);
+            sendIntent.setType("text/plain");
+            String title = "Select the browser";
+            Intent chooser = Intent.createChooser(sendIntent, title);
+            if(sendIntent.resolveActivity(getPackageManager()) != null){
+                startActivity(chooser);
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
